@@ -1,0 +1,38 @@
+baseurl = "/"
+title = "My Blog Site"
+theme = "khata"
+languageCode = "en-us"
+copyright = "2019. First Last"
+pluralizelisttitles = false
+disableKinds = ["taxonomyTerm"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  dateFormat = "2006-01-02"
+
+[params.author] 
+  name = "McFirst Last, A.B., X.Y"
+  profilephoto = "https://i.stack.imgur.com/oI2SB.jpg"
+  title = "Title"
+  subtitle = "City Name, ST"
+  about = '''
+  **Lorem Ipsum is simply dummy text of the printing and typesetting industry**. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into *electronic typesetting*, remaining essentially unchanged.
+'''
+
+[[params.social]]
+  name = "Twitter"
+  link = "#"
+  iconclass= "fab fa-twitter"
+
+[[params.social]]
+  name = "LinkedIn"
+  link = "#"
+  iconclass= "fab fa-linkedin"
+
+[[params.social]]
+  name = "Email"
+  link = "mailto:username@domain.com"
+  iconclass= "fas fa-envelope"

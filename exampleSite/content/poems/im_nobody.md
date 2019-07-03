@@ -1,0 +1,17 @@
+---
+title: "I'm Nobody! Who are you?"
+date: 2018-04-18
+tags: ["Emily Dickinson"]
+categories: ["Personality"]
+draft: false
+---
+
+I'm nobody! Who are you?\\
+Are you nobody, too?\\
+Then there's a pair of us — don't tell!\\
+They'd banish us, you know.
+
+How dreary to be somebody!\\
+How public, like a frog\\
+To tell your name the livelong day\\
+To an admiring bog! 

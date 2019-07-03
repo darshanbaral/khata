@@ -2,9 +2,9 @@ name = "khata"
 license = "MIT"
 licenselink = ""
 description = "Documentation theme for Hugo"
-homepage = ""
-tags = ["documentation", "white", "simple"]
-features = ["documentation", "white", "bootstrap", "responsive"]
+homepage = "https://github.com/darshanbaral/kitab/blob/master/LICENSE"
+tags = ["documentation", "simple"]
+features = ["documentation", "bootstrap", "responsive"]
 min_version = "0.55"
 
 [author]
