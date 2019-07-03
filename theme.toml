@@ -1,6 +1,6 @@
 name = "khata"
 license = "MIT"
-licenselink = "https://github.com/darshanbaral/kitab/blob/master/LICENSE"
+licenselink = "https://github.com/darshanbaral/khata/blob/master/LICENSE"
 description = "Documentation theme for Hugo"
 homepage = "https://github.com/darshanbaral/khata"
 tags = ["documentation", "simple"]
