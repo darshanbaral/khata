@@ -1,4 +1,4 @@
-baseurl = "/"
+baseURL = "https://www.example.org/"
 title = "My Blog Site"
 theme = "khata"
 languageCode = "en-us"
