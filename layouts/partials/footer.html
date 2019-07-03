@@ -1,0 +1,24 @@
+<div class="mb-4 d-flex flex-row justify-content-center">
+  {{ if eq .Kind "page" }}
+  {{ partial "prevNext" . }}
+  {{ end }}
+</div>
+<footer class="border-top border-primary2" style="height: 60px;">
+  <div class="p-3 d-flex flex-row flex-wrap justify-content-between">
+    <div class="copyright">
+      <small>
+        {{- .Site.Copyright | safeHTML -}}
+      </small>
+    </div>
+    <div>
+      <small>
+        khata by
+        <a href="https://www.darshanbaral.com/"> Darshan Baral</a>
+        &middot; powered by
+        <a href="https://gohugo.io/">
+          hugo
+        </a>
+      </small>
+    </div>
+  </div>
+</footer>

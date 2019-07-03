@@ -1,0 +1,6 @@
+{{ define "main"}}
+<div class="standard">
+  {{ partial "filesFromFolder" (dict "Path" .Params.path "title" .Title "Homepage" false) }}
+</div>
+{{ end }}
+

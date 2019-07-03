@@ -1,0 +1,29 @@
+{{ range where .Site.Sections "Params.hidefrommenu" "!=" true }}
+<div class="p-3 bg-light shadow border rounded index-box">
+  <h2 class="pb-1">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h2>
+
+  <div class="d-flex flex-column">
+    {{ range first 6 .Pages }}
+    <div class="d-flex flex-row mb-2">
+      <div class="mr-1 date-short">
+        {{- .Date.Format (default "2006-01-02" "1/2/06") }} -
+      </div>
+      <div>
+        <a
+          href="{{ .Permalink }}"
+          title="{{- if .Params.description -}}
+     {{- .Params.description -}}
+     {{- else -}}
+     Description not available
+     {{- end -}}"
+        >
+          {{- .Title -}}
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

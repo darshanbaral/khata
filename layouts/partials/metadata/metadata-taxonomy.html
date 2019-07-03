@@ -1,0 +1,17 @@
+{{ $params := .Params }}
+{{ range $name, $value := .Site.Taxonomies }}
+{{ if index $params $name }}
+<div class="metadata-value mb-1">
+  {{ $name | humanize }}:
+  {{ range index $params $name }}
+  <a
+    class="pl-1 pr-1 rounded border border-secondary"
+    href="{{ $name | relURL }}/{{ . | urlize }}"
+    title="{{ $name }}: {{ . }}"
+  >
+    {{- . -}}
+  </a>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<h1 class="standard top-h1 mt-4 mb-4">
+  {{- .Title -}}
+</h1>
+<div class="standard grid-container">
+  {{ range (.Paginator 12).Pages }}
+  <div class="index-box p-3 shadow bg-white border rounded">
+    <a href="{{ .Permalink | relURL }}">
+      <h4>{{- .Title -}}</h4>
+    </a>
+    {{ if .Params.Description }}
+    <p style="font-size: 1.05em; font-style: italic;">{{ .Params.Description }}</p>
+    {{ end }}
+    <div class="ml-4 mt-3 metadata">
+      {{ partial "metadata/metadata-date" . }}
+      {{ partial "metadata/metadata-readingtime" . }}
+      {{ if ne $.Kind "section" }}
+      {{ partial "metadata/metadata-section" . }}
+      {{ end }}
+      {{ partial "metadata/metadata-taxonomy" . }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+<div class="mt-4">
+  {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

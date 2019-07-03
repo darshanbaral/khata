@@ -1,0 +1,39 @@
+<div class="header">
+  <nav id="main-nav" class="standard">
+    <div>
+      <i
+        class="hamburger fas fa-bars"
+        onclick="toggleDisplay(this.parentNode.nextElementSibling)"
+      ></i>
+    </div>
+    <div class="all-menu expanded w-100">
+      {{ partial "menu/menu_home" . }}
+      {{ partial "menu/menu_sections" . }}
+      {{ partial "menu/menu_alltaxa" . }}
+      {{ partial "menu/menu_archives" . }}
+    </div>
+  </nav>
+</div>
+<script>
+  function smMenu(x) {
+    let allMenu = document.querySelector(".all-menu");
+    let dropDown = document.querySelector(".dropdown-content");
+    if (x.matches) {
+      allMenu.classList.add("d-none");
+      allMenu.style.flexDirection = "column";
+      dropDown.style.width = "calc(100% - 5px)";
+      dropDown.style.maxHeight = "0px";
+      dropDown.style.position = "static";
+    } else {
+      dropDown.style.width = "auto";
+      allMenu.classList.remove("d-none");
+      allMenu.style.flexDirection = "row";
+      dropDown.style.maxHeight = "0px";
+      dropDown.style.position = "absolute";
+    }
+  }
+
+  let x = window.matchMedia("(max-width: 750px)");
+  smMenu(x); // Call listener function at run time
+  x.addListener(smMenu); // Attach listener function on state changes
+</script>

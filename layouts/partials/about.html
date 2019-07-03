@@ -1,0 +1,28 @@
+<div class="about-container position-relative">
+  <div class="profile-info d-flex flex-row">
+    <div class="profile-photo" style="display: flex; align-items: flex-end;">
+      <img
+        src="{{ .Site.Params.author.profilephoto | relURL }}"
+        style="width: 200px; margin-right:20px; border-radius: 10%;"
+      />
+    </div>
+
+    <div class="d-flex flex-column">
+      <div>
+        <h1 style="font-size: calc(2em + 0.5vw);">
+          {{- .Site.Params.author.name -}}
+        </h1>
+        <h2 style="font-size: calc(1.7em + 0.5vw)">
+          {{- .Site.Params.author.title | markdownify -}}
+        </h2>
+        <h3 style="font-size: calc(1.4em + 0.5vw);">
+          {{- .Site.Params.author.subtitle | markdownify -}}
+        </h3>
+        {{ partial "social" . }}
+      </div>
+      <div style="font-size: 1.1em;">
+        {{ .Site.Params.author.about | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>

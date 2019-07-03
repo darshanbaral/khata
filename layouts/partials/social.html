@@ -1,0 +1,9 @@
+<div class="d-flex flex-row flex-wrap social" style="margin-bottom: 40px;">
+  {{ range.Site.Params.social }}
+  <div class="text-center ml-1 mr-1" style="width: 35px; height: 35px;">
+    <a href="{{ .link }}" title="{{ .name }}"
+      ><i class="icon {{ .iconclass }}"></i
+    ></a>
+  </div>
+  {{ end }}
+</div>

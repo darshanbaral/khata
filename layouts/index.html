@@ -1,0 +1,23 @@
+{{ define "main"}}
+{{ partial "about" . }}
+<div
+  id="recent"
+  class="bg-secondary2"
+  style="padding-top: 40px; padding-bottom: 30px;"
+>
+  <div class="standard">
+    <h1 class="top-h1 mt-4 mb-4 text-white">Recent</h1>
+    <div class="grid-container">
+      {{ partial "indexContent" . }}
+    </div>
+  </div>
+</div>
+<div id="alltaxa">
+  <div class="standard">
+    <h1 class="top-h1 mb-4">Taxa</h1>
+    <div class="p-3 bg-light shadow border rounded">
+      {{ partial "taxa" (dict "this" .Site.Taxonomies "showAll" true) }}
+    </div>
+  </div>
+</div>
+{{ end }}

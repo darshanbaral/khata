@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="standard main rounded mt-4 mb-4" role="main">
+  <article class="shadow p-4 border border-secondary rounded position-relative">
+    <h1 class="top-h1">
+      {{- .Title -}}
+    </h1>
+    <div class="ml-3 metadata">
+      {{ partial "metadata/metadata-date" . }}
+      {{ partial "metadata/metadata-readingtime" . }}
+      {{ if ne $.Kind "section" }}
+      {{ partial "metadata/metadata-section" . }}
+      {{ end }}
+      {{ partial "metadata/metadata-taxonomy" . }}
+    </div>
+    <hr />
+
+    <ul class="list-unstyled">
+      {{ if .Params.location }}
+      <li>
+        <b>Location</b>:
+        <a
+          href="http://www.google.com/maps/search/?api=1&query={{ .Params.location }}"
+        >
+          {{- .Params.location -}}
+        </a>
+      </li>
+      {{ end }}
+
+      {{ if .Params.project }}
+      <li>
+        <b>Project</b>: <code class="text-dark">{{ .Params.project -}}</code>
+      </li>
+      {{ end }}
+
+      {{ if .Params.description }}
+      <li><b>Description</b>: {{ .Params.description -}}</li>
+      {{ end }}
+    </ul>
+    
+    {{ if (gt (len (split .Content `</h`)) 2) }}
+    {{ partial "toc.html" . }}
+    {{ end }}
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

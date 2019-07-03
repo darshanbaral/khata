@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{- $paginator := .Paginate (where .Site.Pages "Kind" "page").ByDate.Reverse 50 }}
+<h1 class="standard top-h1 mt-4 mb-4">{{ .Title }}</h1>
+<table class="standard table table-sm table-striped">
+  <thead>
+    <tr>
+      <th style="width: calc(100% - 100px);">Title</th>
+      <th class="text-right" style="width: 100px;">
+        Date
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $paginator.Pages }}
+    <tr>
+      <td class="p-2">
+        <a href="{{ .Permalink | relURL }}"> {{- .Title -}} </a>
+        {{- if .Params.description }}:
+        {{ .Params.description }}
+        {{ end }}
+      </td>
+      <td class="text-right" style="font-size: 0.9em;">
+          <time>{{- .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) -}}</time>
+      </td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ template "_internal/pagination.html" . }}
+{{ end }}

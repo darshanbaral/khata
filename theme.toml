@@ -1,0 +1,12 @@
+name = "khata"
+license = "MIT"
+licenselink = ""
+description = "Documentation theme for Hugo"
+homepage = ""
+tags = ["documentation", "white", "simple"]
+features = ["documentation", "white", "bootstrap", "responsive"]
+min_version = "0.55"
+
+[author]
+  name = "Darshan Baral"
+  homepage = "https://www.darshanbaral.com/"

@@ -1,0 +1,36 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  {{ if .IsHome }}
+  <title>{{ .Site.Title }}</title>
+  {{ else }}
+  <title>{{ .Title }} - {{ .Site.Title }}</title>
+  {{ end }}
+
+  <meta name="description" content="{{ .Description }}" />
+  <meta name="author" content="{{ .Site.Params.author.name }}" />
+
+  {{ range $key, $value := findRE "content=\"(.+)\"" hugo.Generator }}
+  <meta name="generator" content="khata theme by Darshan in {{ replaceRE `content=|\"` `` $value}}" />
+  {{ end }}
+
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="{{ `css/khata.css` | relURL }}">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans:400|Roboto+Mono&display=swap" rel="stylesheet">
+  
+  <script src="{{ `js/khata.js` | relURL }}" /></script>
+</head>

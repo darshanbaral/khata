@@ -1,0 +1,33 @@
+  <div class="mr-4">
+    {{- if .NextInSection }}
+    <a
+      href="{{ .NextInSection.Permalink | relURL }}"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="{{ .NextInSection.Title }}"
+      ><i class="newer fas fa-chevron-left" style="font-size: 2em;"></i
+    ></a>
+    {{- else }}
+    <i
+      class="text-secondary fas fa-chevron-left"
+      style="font-size: 2em;"
+    ></i>
+    {{- end }}
+  </div>
+  <div class="ml-4">
+    {{- if .PrevInSection }}
+    <a
+      href="{{ .PrevInSection.Permalink | relURL }}"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="{{ .PrevInSection.Title }}"
+      ><i class="older fas fa-chevron-right" style="font-size: 2em;"></i
+    ></a>
+    {{- else }}
+    <i
+      class="text-secondary fas fa-chevron-right"
+      style="font-size: 2em;"
+    ></i>
+    {{- end }}
+  </div>
+
