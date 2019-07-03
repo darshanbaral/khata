@@ -93,7 +93,6 @@ a,
 }
 .dropdown-content {
   background-color: transparent;
-  display: inline-block;
   position: absolute;
   z-index: 1;
   white-space: nowrap;

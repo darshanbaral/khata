@@ -11,31 +11,9 @@
       {{ partial "metadata/metadata-section" . }}
       {{ end }}
       {{ partial "metadata/metadata-taxonomy" . }}
+      {{ partial "metadata/metadata-description" . }}
     </div>
     <hr />
-
-    <ul class="list-unstyled">
-      {{ if .Params.location }}
-      <li>
-        <b>Location</b>:
-        <a
-          href="http://www.google.com/maps/search/?api=1&query={{ .Params.location }}"
-        >
-          {{- .Params.location -}}
-        </a>
-      </li>
-      {{ end }}
-
-      {{ if .Params.project }}
-      <li>
-        <b>Project</b>: <code class="text-dark">{{ .Params.project -}}</code>
-      </li>
-      {{ end }}
-
-      {{ if .Params.description }}
-      <li><b>Description</b>: {{ .Params.description -}}</li>
-      {{ end }}
-    </ul>
     
     {{ if (gt (len (split .Content `</h`)) 2) }}
     {{ partial "toc.html" . }}
