@@ -1,6 +1,8 @@
-{{ if eq 1 (len .Site.Sections) }}
+{{ if eq (len (where .Site.Sections "Params.hidefrommenu" "!=" true)) 1 }}
 <div class="main-menu">
-  <a href="{{ `/` | relURL }}">Home</a>
+  {{ with (index (where .Site.Sections "Params.hidefrommenu" "!=" true) 0) }}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+  {{ end }}
 </div>
 {{ else }}
 <div class="dropdown">
