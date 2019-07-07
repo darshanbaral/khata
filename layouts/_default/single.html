@@ -16,7 +16,9 @@
     <hr />
     
     {{ if (gt (len (split .Content `</h`)) 2) }}
-    {{ partial "toc.html" . }}
+    <div class="TableOfContents rounded p-2 ml-2 mb-2">
+      {{ partial "toc.html" . }}
+    </div>
     {{ end }}
     {{ .Content }}
   </article>

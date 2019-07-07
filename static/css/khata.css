@@ -116,6 +116,15 @@ a,
   min-width: 300px;
   min-height: 200px;
 }
+#TableOfContents > ul {
+  margin-left: 10px;
+  padding-left: 5px;
+  font-variant: small-caps;
+}
+.TableOfContents {
+  float: right;
+  background-color: #dbdbdb;
+}
 @media only screen and (max-width: 1050px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, calc((100% - 50px) / 2));
@@ -148,6 +157,9 @@ a,
     display: block;
     font-size: 1.2em;
   }
+  .TableOfContents {
+    float: initial;
+  }
 }
 .metadata-value {
   font-size: 0.8em;
@@ -160,11 +172,6 @@ a,
 }
 .top-h1 {
   font-size: 3em !important;
-}
-#TableOfContents > ul {
-  margin-left: 10px;
-  padding-left: 5px;
-  font-variant: small-caps;
 }
 .newer:hover,
 .older:hover,
