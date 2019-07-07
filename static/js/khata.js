@@ -1,6 +1,6 @@
 let toggleHeight = function(elem) {
   if (getComputedStyle(elem)["height"] === "0px") {
-    elem.style.maxHeight = elem.scrollHeight + "px";
+    elem.style.maxHeight = elem.scrollHeight + 5 +"px";
   } else {
     elem.style.maxHeight = "0px";
   }

@@ -14,16 +14,17 @@ body {
 .wrapper {
   flex: 1;
 }
-code, pre {
+code,
+pre {
   font-family: "Roboto Mono", monospace;
-  background-color: #fff2ac;  
-  color: black; 
+  background-color: #fff2ac;
+  color: black;
 }
 pre {
   display: inline-block;
   max-width: 100%;
   clear: both;
-  padding: 5px 15px 5px 15px; 
+  padding: 5px 15px 5px 15px;
 }
 h1,
 h2,
@@ -53,17 +54,19 @@ a,
   cursor: pointer;
   color: white !important;
 }
-.main-menu,
-.main-menu a {
+.main-menu {
   font-variant: small-caps;
   font-family: "Open Sans", sans-serif;
+  color: white !important;
+  margin-right: 25px;
+  margin-top: initial;
+  margin-bottom: initial;
+}
+.main-menu > a {
   color: white !important;
 }
 .main-menu a:hover {
   text-decoration: none;
-}
-.main-menu {
-  margin-right: 25px;
 }
 .social-icons {
   display: flex;
@@ -97,7 +100,7 @@ a,
   position: absolute;
   z-index: 1;
   white-space: nowrap;
-  max-height: 0px;  
+  max-height: 0px;
   overflow: hidden;
   transition: all 0.25s;
 }
@@ -121,6 +124,11 @@ a,
 @media only screen and (max-width: 750px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, 100%);
+  }
+  .main-menu {
+    margin-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .profile-info {
     width: 100%;
@@ -153,7 +161,7 @@ a,
 .top-h1 {
   font-size: 3em !important;
 }
-#TableOfContents > ul {  
+#TableOfContents > ul {
   margin-left: 10px;
   padding-left: 5px;
   font-variant: small-caps;
