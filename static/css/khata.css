@@ -21,6 +21,7 @@ code, pre {
 }
 pre {
   display: inline-block;
+  max-width: 100%;
   clear: both;
   padding: 5px 15px 5px 15px; 
 }
