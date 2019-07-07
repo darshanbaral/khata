@@ -16,7 +16,7 @@
   <div class="standard">
     <h1 class="top-h1 mb-4">Taxa</h1>
     <div class="p-3 bg-light shadow border rounded">
-      {{ partial "taxa" (dict "this" .Site.Taxonomies "showAll" true) }}
+      {{ partial "taxa" (dict "taxo" .Site.Taxonomies "mysite" .) }}
     </div>
   </div>
 </div>

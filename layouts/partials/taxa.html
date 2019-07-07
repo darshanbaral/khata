@@ -1,25 +1,46 @@
 {{ $scratch := newScratch }}
 {{ $scratch.Delete "custom" }}
-{{ $flag := .showAll }}
 
-{{ range $name, $value := .this }}
+{{ range $name, $value := .taxo }}
 {{ $scratch.Add "custom" (slice (dict "Name" $name "Value" $value "Num" (len $value))) }}
 {{ end }}
 
 {{ range sort ($scratch.Get "custom") ".Num" "desc" }}
 {{ $taxaTypeName := .Name }}
-  <h2>
-    {{ $taxaTypeName | humanize }}{{if $flag }}<small class="badge" title="Number of unique {{ $taxaTypeName | humanize }}">({{ .Num }})</small
-    >{{ end }}
-  </h2>
-  {{ $n_taxa := cond $flag .Num 5 }}
-  {{ $this_taxa := index $.this .Name }}
-  <div class="d-flex flex-row flex-wrap ml-2 mb-4">
-    {{ range first $n_taxa $this_taxa.ByCount }}
-    <div class="m-1 p-1 btn btn-light border border-secondary">
-      <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a
-      > - <small title="Number of articles with {{ $taxaTypeName | singularize | humanize }} '{{ .Page.Title }}'">{{ .Count }}</small>
-    </div>
-    {{ end }}
+<h2>
+  {{ $taxaTypeName | humanize }}
+  <small title="Number of unique {{ $taxaTypeName | humanize }}">
+    ({{ .Num }})
+  </small>
+</h2>
+{{ $this_taxa := index $.taxo .Name }}
+<div class="d-flex flex-row flex-wrap ml-2 mb-4">
+  {{ range $this_taxa.ByCount }}
+  {{ $count := .Count }}
+  {{ $taxaValueName := .Page.Title }}
+  {{ if eq $count 1 }}
+  {{ with (index .Pages 0) }}
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="{{ .Permalink }}">{{ $taxaValueName }}</a> -
+    <small
+      title="Only one article titled '{{ .Title }}' has {{ $taxaTypeName | singularize | humanize }} '{{ $taxaValueName }}'"
+      >
+      {{- $count -}}
+      </small
+    >
   </div>
+  {{ end }}
+  {{ else }}
+  <div class="m-1 p-1 btn btn-light border border-secondary">
+    <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> -
+    <small
+      title="Number of articles with {{ $taxaTypeName | singularize | humanize }} '{{ $taxaValueName }}'"
+      >
+      {{- $count -}}
+      </small
+    >
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
 {{ end }}
