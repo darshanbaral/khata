@@ -2,6 +2,9 @@
 
 The khata Theme is a hugo theme for documentation and note keeping.
 
+## Live Demo
+[Click here](https://khatademo.netlify.com/) for live demo.
+
 ## Installation
 
 Inside the folder of your Hugo site run:
