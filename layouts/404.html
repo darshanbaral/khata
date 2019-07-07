@@ -1,6 +1,13 @@
 {{ define "main"}}
-<div>
-  <h1>One would think...</h1>
-  <h2>Let's go <a href="{{ `/` | relURL }}">back to home page</a>.</h2>
+<div class="standard main rounded mt-4 mb-4" role="main">
+  <article
+    class="shadow p-4 border border-secondary rounded position-relative"
+    style="min-height: calc(100vh - 250px)"
+  >
+    <h1 class="top-h1">
+      One would think...
+    </h1>
+    <h2>Let's go <a href="{{ `/` | relURL }}">back to home page</a>.</h2>
+  </article>
 </div>
 {{ end }}
