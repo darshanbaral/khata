@@ -1,3 +1,13 @@
 <div class="main-menu">
-  <a href="{{ `/` | relURL }}#alltaxa">Taxa</a>
+  <a href="{{ `/` | relURL }}#alltaxa" onclick="resetMenus()">Taxa</a>
 </div>
+<script>
+  let resetMenus = function() {
+    resetMainMenu();
+    document.querySelector(".all-menu").classList.add("d-none");
+    if (document.querySelector(".dropdown-content")) {
+      resetSectionMenu();
+      zeroHeight(document.querySelector(".dropdown-content"));
+    }
+  };
+</script>
