@@ -6,8 +6,8 @@
 </div>
 {{ else }}
 <div class="dropdown main-menu">
-  <span class="dropbtn" onclick="toggleHeight(this.nextElementSibling)">
-    Sections <i class="fas fa-chevron-down"></i>
+  <span class="dropbtn" onclick="toggleSectionMenu(this)">
+    Sections <i class="section-menu fas fa-chevron-down"></i>
   </span>
   <div class="dropdown-content">
     <div class="rounded bg-light mt-2">
@@ -19,7 +19,44 @@
         </li>
         {{ end }}
       </ul>
-  </div>
+    </div>
   </div>
 </div>
+<script>
+  let toggleHeight = function(elem) {
+    if (getComputedStyle(elem)["height"] === "0px") {
+      elem.style.maxHeight = elem.scrollHeight + 5 + "px";
+    } else {
+      elem.style.maxHeight = "0px";
+    }
+  };
+  let toggleSectionMenu = function(x) {
+    toggleHeight(x.nextElementSibling);
+    document.querySelector(".section-menu").classList.toggle("fa-chevron-down");
+    document.querySelector(".section-menu").classList.toggle("fa-chevron-up");
+  };
+  let resetSectionMenu = function() {
+    document.querySelector(".section-menu").classList.add("fa-chevron-down");
+    document.querySelector(".section-menu").classList.remove("fa-chevron-up");
+  };
+  let zeroHeight = function(elem) {
+    elem.style.maxHeight = "0px";
+  };
+  let checkClick = function() {
+    if (!document.querySelector(".dropdown").contains(event.target)) {
+      zeroHeight(document.querySelector(".dropdown-content"));
+      resetSectionMenu();
+    }
+  };
+  window.onclick = function() {
+    if (!vw.matches) {
+      checkClick();
+    }
+  };
+  window.ontouchstart = function() {
+    if (!vw.matches) {
+      checkClick();
+    }
+  };
+</script>
 {{ end }}

@@ -1,10 +1,7 @@
 <div class="header">
   <nav id="main-nav" class="standard">
     <div class="hamburger-icon">
-      <i
-        class="hamburger fas fa-bars"
-        onclick="toggleDisplay(this.parentNode.nextElementSibling)"
-      ></i>
+      <i class="hamburger fas fa-bars" onclick="toggleMainMenu(this)"></i>
     </div>
     <div class="all-menu expanded w-100">
       {{ partial "menu/menu_home" . }}
@@ -15,25 +12,48 @@
   </nav>
 </div>
 <script>
+  let toggleDisplay = function(elem) {
+    elem.classList.toggle("d-none");
+  };
+  let toggleMainMenu = function(x) {
+    toggleDisplay(x.parentNode.nextElementSibling);
+    document.querySelector(".hamburger").classList.toggle("fa-bars");
+    document.querySelector(".hamburger").classList.toggle("fa-times");
+    if (document.querySelector(".dropdown-content")) {
+      resetSectionMenu();
+      zeroHeight(document.querySelector(".dropdown-content"));
+    }
+  };
+  let resetMainMenu = function() {
+    document.querySelector(".hamburger").classList.add("fa-bars");
+    document.querySelector(".hamburger").classList.remove("fa-times");
+  };
   function smMenu(x) {
     let allMenu = document.querySelector(".all-menu");
     let dropDown = document.querySelector(".dropdown-content");
     if (x.matches) {
       allMenu.classList.add("d-none");
       allMenu.style.flexDirection = "column";
-      dropDown.style.width = "calc(90vw - 5px)";
-      dropDown.style.maxHeight = "0px";
-      dropDown.style.position = "static";
-    } else {
-      dropDown.style.width = "auto";
+      if (dropDown) {
+        resetSectionMenu();
+        dropDown.style.width = "calc(90vw - 4.5px)";
+        dropDown.style.maxHeight = "0px";
+        dropDown.style.position = "static";
+      }
+      resetMainMenu();
+    } else {      
       allMenu.classList.remove("d-none");
       allMenu.style.flexDirection = "row";
-      dropDown.style.maxHeight = "0px";
-      dropDown.style.position = "absolute";
+      if (dropDown) {
+        dropDown.style.width = "auto";
+        resetSectionMenu();
+        dropDown.style.maxHeight = "0px";
+        dropDown.style.position = "absolute";
+      }
+      resetMainMenu();
     }
   }
-
-  let x = window.matchMedia("(max-width: 750px)");
-  smMenu(x); // Call listener function at run time
-  x.addListener(smMenu); // Attach listener function on state changes
+  let vw = window.matchMedia("(max-width: 750px)");
+  smMenu(vw); // Call listener function at run time
+  vw.addListener(smMenu); // Attach listener function on state changes
 </script>

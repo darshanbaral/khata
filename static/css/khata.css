@@ -58,10 +58,6 @@ a,
   color: white !important;
   cursor: pointer;
 }
-.hamburger:active {
-  color: #2f16ac !important;
-  background-color: white;
-}
 .main-menu {
   font-variant: small-caps;
   font-family: "Open Sans", sans-serif;
