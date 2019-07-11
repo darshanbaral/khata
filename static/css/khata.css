@@ -49,8 +49,7 @@ a,
 .all-menu {
   display: flex;
 }
-.hamburger-icon {
-  text-align: right;
+.hamburger-icon-container {
   display: none;
 }
 .hamburger {
@@ -215,8 +214,9 @@ a,
     margin-left: auto;
     margin-right: auto;
   }
-  .hamburger-icon {
-    display: block;
+  .hamburger-icon-container {
+    display: flex;
+    justify-content: space-between;
   }
   .TableOfContents {
     float: initial;
