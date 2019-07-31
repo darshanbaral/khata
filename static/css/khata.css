@@ -183,7 +183,8 @@ a,
   min-width: 60px;
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 2.5px;
 }
 
 @media only screen and (max-width: 1050px) {
