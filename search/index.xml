@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Search on My Blog Site</title>
+    <link>https://darshanbaral.github.io/khata/search/</link>
+    <description>Recent content in Search on My Blog Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>2019. First Last</copyright>
+    <atom:link href="https://darshanbaral.github.io/khata/search/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
