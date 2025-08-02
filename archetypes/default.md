@@ -1,5 +1,6 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: ""
+author: "{{ .Site.Params.author.name }}"
 date: {{ .Date }}
 tags: []
 categories: []
