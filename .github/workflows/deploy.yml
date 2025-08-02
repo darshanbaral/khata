@@ -25,6 +25,11 @@ jobs:
           hugo-version: "0.147.9"
           extended: true
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24.3.0"
+
       - name: Build Hugo site
         run: hugo -b https://darshanbaral.github.io/khata/; npx -y pagefind --site public
 
