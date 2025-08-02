@@ -10,28 +10,26 @@
 <h2>
   {{ $taxaTypeName | humanize }}
   <small title="Number of unique {{ $taxaTypeName | humanize }}">
-    ({{ .Num }})
+    (#{{ .Num }})
   </small>
 </h2>
 {{ $this_taxa := index $.taxo .Name }}
-<div class="d-flex flex-row flex-wrap ml-2 mb-4">
+<div class="d-flex flex-row flex-wrap ms-2 mb-4">
   {{ range $this_taxa.ByCount }}
   {{ $count := .Count }}
   {{ $taxaValueName := .Page.Title }}
   {{ if eq $count 1 }}
   {{ with (index .Pages 0) }}
-  <div class="m-1 p-1 btn btn-light border border-secondary">
-    <a href="{{ .Permalink }}">{{ $taxaValueName }}</a> -
-    <small
+  <div class="m-1 py-1 px-2 bg-taxa rounded border border-secondary">
+    <a href="{{ .Permalink }}">{{- $taxaValueName -}}</a>&nbsp;<small
       title="Only one article titled '{{ .Title }}' has {{ $taxaTypeName | singularize | humanize }} '{{ $taxaValueName }}'"
-      >
-      {{- $count -}}
+      >&ndash;&nbsp;{{- $count -}}
       </small
     >
   </div>
   {{ end }}
   {{ else }}
-  <div class="m-1 p-1 btn btn-light border border-secondary">
+  <div class="m-1 p-1 bg-taxa rounded border border-secondary ">
     <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> -
     <small
       title="Number of articles with {{ $taxaTypeName | singularize | humanize }} '{{ $taxaValueName }}'"

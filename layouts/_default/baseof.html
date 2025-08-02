@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" data-bs-theme="dark">
   {{ partial "head.html" . }}
-  <body class="bg-light">
-    <div class="wrapper">
+  <body class="mx-auto text-white d-flex flex-column p-2">
+    
       {{ partial "header.html" . }}
-      <main>
+      <main class="flex-grow-1 d-flex flex-column">
         {{ block "main" . }}
         {{ end }}
       </main>
-    </div>
+    
     <div class="footer">
       {{ partial "footer.html" . }}
     </div>

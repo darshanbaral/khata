@@ -1,10 +1,10 @@
-baseURL = "https://www.example.org/"
+baseURL = "/"
 title = "My Blog Site"
 theme = "khata"
 languageCode = "en-us"
 copyright = "2019. First Last"
 pluralizelisttitles = false
-disableKinds = ["taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [taxonomies]
   category = "categories"
@@ -15,7 +15,7 @@ disableKinds = ["taxonomyTerm"]
 
 [params.author] 
   name = "McFirst Last, A.B., X.Y"
-  profilephoto = "https://i.stack.imgur.com/oI2SB.jpg"
+  profilephoto = "homePageImage.jpg"
   title = "Title"
   subtitle = "City Name, ST"
   about = '''
@@ -25,14 +25,14 @@ disableKinds = ["taxonomyTerm"]
 [[params.social]]
   name = "Twitter"
   link = "#"
-  iconclass= "fab fa-twitter"
+  iconclass= "bi bi-twitter-x"
 
 [[params.social]]
   name = "LinkedIn"
   link = "#"
-  iconclass= "fab fa-linkedin"
+  iconclass= "bi bi-linkedin"
 
 [[params.social]]
   name = "Email"
   link = "mailto:username@domain.com"
-  iconclass= "fas fa-envelope"
+  iconclass= "bi bi-envelope-at-fill"

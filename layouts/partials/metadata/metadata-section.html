@@ -1,10 +1,9 @@
 <div class="metadata-value mb-1">
-  Section:
-  <a
-    class="pl-1 pr-1 rounded border border-secondary"
+  <small>Section:
+  <a    
     href="{{ .Section | relURL }}"
     title="Section"
   >
     {{- (.Site.GetPage .Section).Title -}}
-  </a>
+  </a></small>
 </div>

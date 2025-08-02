@@ -1,10 +1,10 @@
 {{ define "main" }}
-<div class="standard main rounded mt-4 mb-4" role="main">
-  <article class="shadow p-4 border border-secondary rounded position-relative" style="min-height: calc(100vh - 250px)">
+<div class="my-4">
+  <article>
     <h1 class="top-h1">
       {{- .Title -}}
     </h1>
-    <div class="ml-3 metadata">
+    <div class="ms-3 metadata">
       {{ partial "metadata/metadata-date" . }}
       {{ partial "metadata/metadata-readingtime" . }}
       {{ if ne $.Kind "section" }}
@@ -16,7 +16,7 @@
     <hr />
     
     {{ if (gt (len (split .Content `</h`)) 2) }}
-    <div class="TableOfContents rounded p-2 ml-2 mb-2">
+    <div class="TableOfContents border rounded p-2 ms-2 mb-2">
       {{ partial "toc.html" . }}
     </div>
     {{ end }}

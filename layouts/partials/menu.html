@@ -1,0 +1,36 @@
+<div
+  class="flex-grow-1 d-flex flex-column d-flex justify-content-start align-items-center"
+>
+  <div class="w-100">
+    <p role="button" class="fs-4 text-danger" onclick="history.back()">
+      <span class="border p-2 rounded">Back</span>
+    </p>
+    <p class="menu-item my-0 p-1 fs-4">
+      <a href="{{ `recent` | relURL }}">Recent Posts</a>
+    </p>
+    {{ if eq (len (where .Site.Sections "Params.hidefrommenu" "!=" true)) 1 }}
+    {{ with (index (where .Site.Sections "Params.hidefrommenu" "!=" true) 0) }}
+    <p class="menu-item my-0 p-1 fs-4">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </p>
+    {{ end }}
+    {{ else }}
+    <p class="menu-item my-0 p-1 fs-4">Sections</p>
+    <div class="rounded my-0 ps-4">
+      {{ range sort (where .Site.Sections "Params.hidefrommenu" "!=" true) "Title" }}
+      {{ $thisSection := replace .File.Dir "\\" "" }}
+      <p class="menu-item my-0 p-1 fs-5">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </p>
+      {{ end }}
+    </div>
+
+    <p class="menu-item my-0 p-1 fs-4">
+      <a href="{{ `taxa` | relURL }}">Taxa</a>
+    </p>
+    <p class="menu-item my-0 p-1 fs-4">
+      <a href="{{ `archive` | relURL }}">Archive</a>
+    </p>
+  </div>
+  {{ end }}
+</div>

@@ -2,16 +2,16 @@
 {{ range $name, $value := .Site.Taxonomies }}
 {{ if index $params $name }}
 <div class="metadata-value mb-1">
-  {{ $name | humanize }}:
+  <small>{{ $name | humanize }}:
   {{ range index $params $name }}
   <a
-    class="pl-1 pr-1 rounded border border-secondary"
+    class="px-1 mx-1 rounded border border-secondary bg-taxa"
     href="{{ $name | relURL }}/{{ . | urlize }}"
     title="{{ $name }}: {{ . }}"
   >
     {{- . -}}
   </a>
-  {{ end }}
+  {{ end }}</small>
 </div>
 {{ end }}
 {{ end }}

@@ -1,225 +1,187 @@
-.standard {
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-}
+/*==============================
+  Global Styles
+==============================*/
 body {
-  font-family: "Nunito", sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 20px);
+  font-family: "Quicksand", sans-serif;
+  min-height: 100vh;
+  max-width: 800px;
   overflow-y: scroll;
-  color: black;
 }
-.wrapper {
-  flex: 1;
+
+main {
+  min-height: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
 code,
 pre {
-  font-family: "Roboto Mono", monospace;
-  background-color: #fff2ac;
-  color: black;
+  font-family: "Inconsolata", monospace;
 }
-pre {
-  display: inline-block;
+
+/* pre {
   max-width: 100%;
   clear: both;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 15px;
+  border: 1px;
+} */
+
+pre {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f8f8f2;
+  background-color: #1c1e20 !important;
+  padding: 15px 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: 1px solid #514848;
+  margin: 1em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
+/*==============================
+  Typography
+==============================*/
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Arvo", serif;
 }
-a,
-.more {
-  color: rgba(34, 8, 167, 0.94) !important;
-}
-.header {
-  background-color: #2f16ac;
-}
-#main-nav {
-  display: flex;
-  flex-direction: column;
-  min-height: 60px;
-  padding: 15px 0 15px 0px;
-}
-.all-menu {
-  display: flex;
-}
-.hamburger-icon-container {
-  display: none;
-}
-.hamburger {
-  font-size: 1.5em;
-  color: white !important;
-  cursor: pointer;
-}
-.main-menu {
-  font-variant: small-caps;
-  font-family: "Open Sans", sans-serif;
-  color: white !important;
-  margin-right: 25px;
-  margin-top: initial;
-  margin-bottom: initial;
-  font-size: 1.1em;
-}
-.main-menu > a {
-  color: white !important;
-}
-.main-menu a:hover {
-  text-decoration: none;
-}
-.social-icons {
-  display: flex;
-  flex-direction: row;
-  padding: 15px 0 15px 0px;
-}
-.about-container {
-  min-height: calc(100vh - 90px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-}
-.profile-info {
-  width: 65vw;
-  max-width: 850px;
-  min-width: 650px;
-}
-.dropbtn {
-  color: white !important;
-}
-.dropbtn,
-.more {
-  cursor: pointer;
-}
-.dropdown {
-  position: relative !important;
-}
-.dropdown-content {
-  background-color: transparent;
-  position: absolute;
-  z-index: 1;
-  white-space: nowrap;
-  max-height: 0px;
-  overflow: hidden;
-  transition: all 0.25s;
-}
-.dropdown-content > div {
-  border: 1px solid #2f16ac !important;
-}
-.grid-container {
-  display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(auto-fill, calc((100% - 100px) / 3));
-}
-.index-box {
-  min-width: 300px;
-  min-height: 200px;
-}
-#TableOfContents > ul {
-  margin-left: 10px;
-  padding-left: 5px;
-  font-variant: small-caps;
-}
-.TableOfContents {
-  float: right;
-  background-color: #dbdbdb;
-}
-.metadata-value {
-  font-size: 0.8em;
-}
+
+/*==============================
+  Icons
+==============================*/
 .icon {
   font-size: 1.7em;
 }
 .icon:hover {
   font-size: 1.65em;
 }
-.top-h1 {
-  font-size: 3em !important;
+
+.external-link-icon {
+  font-size: 0.8em;
 }
-.newer:hover,
-.older:hover,
-.to-top:hover {
-  cursor: pointer;
-  color: #2f16acde;
+
+/*==============================
+  Layout and Containers
+==============================*/
+.grid-container {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(auto-fill, calc((100% - 100px) / 3));
 }
-.bg-secondary2 {
-  background-color: #2f16ac;
+
+.index-box {
+  min-width: 300px;
+  min-height: 200px;
 }
-.border-primary2 {
-  border-color: #2f16ac !important;
+
+.profile-info {
+  width: 65vw;
+  max-width: 850px;
+  min-width: 650px;
 }
+
+/*==============================
+  Menu and Navigation
+==============================*/
+.menu-item:hover {
+  background-color: #1c1e20;
+}
+
 .pagination {
   display: flex;
   justify-content: center !important;
 }
-.page-link {
-  color: #2f16ac;
-  border: 1px solid #2f16ac !important;
-}
-.page-item.active .page-link {
-  color: #fff !important;
-  background-color: #2f16ac;
-}
+
 .page-item.disabled .page-link {
   color: #fff !important;
   background-color: #5c58589c;
 }
-#alltaxa {
-  margin-top: 30px;
-  padding-top: 40px;
-  padding-bottom: 30px;
-  min-height: calc(100vh - 110px);
-}
-.external-link-icon {
-  font-size: 0.8em;
-}
-.date-short {
-  font-size: 0.75em;
-  min-width: 60px;
-  display: flex;
-  justify-content: end;
-  align-items: flex-start;
-  margin-top: 2.5px;
+
+.newer:hover,
+.older:hover,
+.to-top:hover {
+  cursor: pointer;
 }
 
+/*==============================
+  Table of Contents
+==============================*/
+#TableOfContents > ul {
+  margin-left: 10px;
+  padding-left: 5px;
+  font-variant: small-caps;
+}
+
+.TableOfContents {
+  float: right;
+}
+
+/*==============================
+  Section-specific Styles
+==============================*/
+#alltaxa {
+  min-height: calc(100vh - 110px);
+}
+
+/*==============================
+  Responsive Styles
+==============================*/
 @media only screen and (max-width: 1050px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, calc((100% - 50px) / 2));
   }
 }
+
 @media only screen and (max-width: 750px) {
   .grid-container {
     grid-template-columns: repeat(auto-fill, 100%);
   }
+
   .main-menu {
-    margin-right: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px 0;
   }
+
   .profile-info {
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px 0;
     flex-wrap: wrap;
-    max-width: auto;
-    min-width: auto;
+    max-width: none;
+    min-width: 0;
   }
-  .about-container {
-    min-height: auto;
-    width: 90vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   .hamburger-icon-container {
     display: flex;
     justify-content: space-between;
   }
+
   .TableOfContents {
     float: initial;
   }
+}
+.bg-taxa {
+  background-color: #122b1f;
+}
+
+.pagefind-ui__search-clear {
+  display: none;
+}
+.pagefind-ui__search-input {
+  color: white;
+  background-color: #322d2d;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  border: 1px solid gray;
+}
+.pagefind-ui__search-input::placeholder {
+  color: #8f8f8f;
 }

@@ -1,17 +1,17 @@
 {{ define "main" }}
-<h1 class="standard top-h1 mt-4 mb-4">
+<h1 class="my-4">
   {{- .Title -}}
 </h1>
-<div class="standard grid-container">
-  {{ range (.Paginator 12).Pages }}
-  <div class="index-box p-3 shadow bg-white border rounded">
+<div>
+  {{ range (.Paginator 5).Pages }}
+  <div class="p-3 border rounded my-2">
     <a href="{{ .Permalink | relURL }}">
       <h4>{{- .Title -}}</h4>
     </a>
     {{ if .Params.Description }}
-    <p style="font-size: 1.05em; font-style: italic;">{{ .Params.Description }}</p>
+    <div><em>{{ .Params.Description }}</em></div>
     {{ end }}
-    <div class="ml-4 mt-3 metadata">
+    <div class="mt-2">
       {{ partial "metadata/metadata-date" . }}
       {{ partial "metadata/metadata-readingtime" . }}
       {{ if ne $.Kind "section" }}
@@ -22,7 +22,7 @@
   </div>
   {{ end }}
 </div>
-<div class="mt-4">
-  {{ template "_internal/pagination.html" . }}
+<div class="pagination my-2">
+  {{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
 </div>
 {{ end }}

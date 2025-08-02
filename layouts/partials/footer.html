@@ -1,9 +1,9 @@
-<div class="mb-4 d-flex flex-row justify-content-center">
-  {{ if eq .Kind "page" }}
+ {{ if eq .Kind "page" }}
+ <div class="mb-4 d-flex flex-row justify-content-around">
   {{ partial "prevNext" . }}
-  {{ end }}
 </div>
-<footer class="border-top border-primary2" style="height: 60px;">
+ {{ end }}
+<footer class="border-top border-light">
   <div class="p-3 d-flex flex-row flex-wrap justify-content-between">
     <div class="copyright">
       <small>
