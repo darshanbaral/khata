@@ -1,26 +1,25 @@
 {{ define "main" }}
-<div class="my-4">
-  <article>
-    <h1 class="top-h1">
-      {{- .Title -}}
-    </h1>
-    <div class="ms-3 metadata">
-      {{ partial "metadata/metadata-date" . }}
-      {{ partial "metadata/metadata-readingtime" . }}
-      {{ if ne $.Kind "section" }}
-      {{ partial "metadata/metadata-section" . }}
-      {{ end }}
-      {{ partial "metadata/metadata-taxonomy" . }}
-      {{ partial "metadata/metadata-description" . }}
-    </div>
-    <hr />
-    
-    {{ if (gt (len (split .Content `</h`)) 2) }}
-    <div class="TableOfContents border rounded p-2 ms-2 mb-2">
-      {{ partial "toc.html" . }}
-    </div>
+<article>
+  <h1 class="my-4 top-h1">{{- .Title -}}</h1>
+  <div class="ms-3 metadata">
+    {{ partial "metadata/metadata-date" . }}
+    {{ partial "metadata/metadata-readingtime" . }}
+    {{ if ne $.Kind "section" }}
+    {{ partial "metadata/metadata-section" . }}
     {{ end }}
-    {{ .Content }}
-  </article>
-</div>
+    {{ partial "metadata/metadata-taxonomy" . }}
+    {{ partial "metadata/metadata-description" . }}
+  </div>
+
+  <hr />
+
+  {{ $toc := .TableOfContents }}
+  {{ $items := findRE `</li>` $toc }}
+  {{ $numItems := len $items }}
+  {{ if gt $numItems 1 }}
+  <div class="TableOfContents border rounded p-2 ms-2 mb-2">{{ $toc }}</div>
+  {{ end }}
+  {{ .Content }}
+</article>
+
 {{ end }}

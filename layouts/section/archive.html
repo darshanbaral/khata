@@ -40,7 +40,7 @@
     {{ end }}
   </tbody>
 </table>
-{{ template "_internal/pagination.html" . }}
+{{ template "_internal/pagination.html" (dict "page" . "format" "terse") }}
 <script>
   const expand = function(elem) {
     elem.firstChild.classList.toggle("bi-plus-circle");
