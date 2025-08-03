@@ -1,5 +1,14 @@
-<nav>
-    <a class="me-2 fs-5" href="{{ .Site.BaseURL }}">Home</a>
-    <a class="mx-2 fs-5" href="{{ `menu` | relURL }}">Menu</a>
-    <a class="ms-2 fs-5" href="{{ `search` | relURL }}">Search</a>
+<nav aria-label="Primary navigation">
+  <a class="me-2 fs-4" href="{{ .Site.BaseURL }}">
+    <i class="bi bi-house-door-fill" aria-hidden="true"></i>
+    <span class="visually-hidden">Home</span>
+  </a>
+  <a class="mx-2 fs-4" href="{{ `menu` | relURL }}">
+    <i class="bi bi-list" aria-hidden="true"></i>
+    <span class="visually-hidden">Menu</span>
+  </a>
+  <a class="ms-2 fs-4" href="{{ `search` | relURL }}">
+    <i class="bi bi-search" aria-hidden="true"></i>
+    <span class="visually-hidden">Search</span>
+  </a>
 </nav>
