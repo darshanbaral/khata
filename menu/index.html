@@ -34,10 +34,19 @@
 
   <body class="mx-auto text-white d-flex flex-column p-2">
     
-      <nav>
-    <a class="me-2 fs-5" href="https://darshanbaral.github.io/khata/">Home</a>
-    <a class="mx-2 fs-5" href="/khata/menu">Menu</a>
-    <a class="ms-2 fs-5" href="/khata/search">Search</a>
+      <nav aria-label="Primary navigation">
+  <a class="me-2 fs-4" href="https://darshanbaral.github.io/khata/">
+    <i class="bi bi-house-door-fill" aria-hidden="true"></i>
+    <span class="visually-hidden">Home</span>
+  </a>
+  <a class="mx-2 fs-4" href="/khata/menu">
+    <i class="bi bi-list" aria-hidden="true"></i>
+    <span class="visually-hidden">Menu</span>
+  </a>
+  <a class="ms-2 fs-4" href="/khata/search">
+    <i class="bi bi-search" aria-hidden="true"></i>
+    <span class="visually-hidden">Search</span>
+  </a>
 </nav>
 
       <main class="flex-grow-1 d-flex flex-column">
@@ -47,14 +56,14 @@
   class="flex-grow-1 d-flex flex-column d-flex justify-content-start align-items-center"
 >
   <div class="w-100">
-    <p role="button" class="fs-4 text-danger" onclick="history.back()">
-      <span class="border p-2 rounded">Back</span>
+    <p role="button" class="fs-4 text-danger mt-0 mb-2" onclick="history.back()">
+      <span><i class="bi bi-arrow-left"></i> Back</span>
     </p>
     <p class="menu-item my-0 p-1 fs-4">
-      <a href="/khata/recent">Recent Posts</a>
+      <a href="/khata/recent"><i class="bi bi-bell"></i> Recent Posts</a>
     </p>
     
-    <p class="menu-item my-0 p-1 fs-4">Sections</p>
+    <p class="menu-item my-0 p-1 fs-4"><i class="bi bi-tags"></i> Sections</p>
     <div class="rounded my-0 ps-4">
       
       
@@ -75,10 +84,10 @@
     </div>
 
     <p class="menu-item my-0 p-1 fs-4">
-      <a href="/khata/taxa">Taxa</a>
+      <a href="/khata/taxa"><i class="bi bi-tags"></i> Taxa</a>
     </p>
     <p class="menu-item my-0 p-1 fs-4">
-      <a href="/khata/archive">Archive</a>
+      <a href="/khata/archive"><i class="bi bi-archive"></i> Archive</a>
     </p>
   </div>
   
