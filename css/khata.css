@@ -56,20 +56,6 @@ h5 {
 }
 
 /*==============================
-  Icons
-==============================*/
-.icon {
-  font-size: 1.7em;
-}
-.icon:hover {
-  font-size: 1.65em;
-}
-
-.external-link-icon {
-  font-size: 0.8em;
-}
-
-/*==============================
   Layout and Containers
 ==============================*/
 .grid-container {
