@@ -9,24 +9,22 @@
 
     <div class="d-flex flex-column">
       <div>
-        <h1>{{- .Site.Params.author.name -}}</h1>
+        <h1>{{- .Site.Params.author.name | markdownify -}}</h1>
         <h2>{{- .Site.Params.author.title | markdownify -}}</h2>
         <h3>{{- .Site.Params.author.subtitle | markdownify -}}</h3>
         {{ partial "social" . }}
       </div>
       <div>{{ .Site.Params.author.about | markdownify }}</div>
-      <div>
-        <div class="mt-3">
-          <span class="menu-item my-0 me-1">
-            <a href="{{ `recent` | relURL }}">Recent Posts</a>
-          </span>
-          {{ range sort (where .Site.Sections "Params.hidefrommenu" "!=" true) "Title" }}
-          {{ $thisSection := replace .File.Dir "\\" "" }}
-          <span class="menu-item mx-1">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </span>
-          {{ end }}
-        </div>
+      <div class="mt-4 d-flex flex-column flex-sm-row flex-wrap">
+        <span class="menu-item my-0 me-3">
+          <a href="{{ `recent` | relURL }}">Recent Posts</a>
+        </span>
+        {{ range sort (where .Site.Sections "Params.hidefrommenu" "!=" true)
+        "Title" }} {{ $thisSection := replace .File.Dir "\\" "" }}
+        <span class="menu-item me-3">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </span>
+        {{ end }}
       </div>
     </div>
   </div>

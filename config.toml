@@ -14,12 +14,12 @@ disableKinds = ["taxonomy"]
   dateFormat = "2006-01-02"
 
 [params.author] 
-  name = "McFirst Last, A.B., X.Y"
+  name = "`khata`"
   profilephoto = "homePageImage.jpg"
-  title = "Title"
-  subtitle = "City Name, ST"
+  title = "[hugo](https://gohugo.io/) theme"
+  subtitle = "for documentation/note-taking"
   about = '''
-  **Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into *electronic typesetting*, remaining essentially unchanged.
+  [`khata`](https://github.com/darshanbaral/khata) theme is a clean and responsive Hugo theme designed for documentation and note-taking. Khata is highly customizable and provides a simple, elegant layout to make your content easy to read and navigate.
 '''
 
 [[params.social]]

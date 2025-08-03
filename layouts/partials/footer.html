@@ -1,24 +1,20 @@
- {{ if eq .Kind "page" }}
- <div class="mb-4 d-flex flex-row justify-content-around">
+{{ if eq .Kind "page" }}
+<div class="mb-4 d-flex flex-row justify-content-around">
   {{ partial "prevNext" . }}
 </div>
- {{ end }}
-<footer class="border-top border-light">
-  <div class="py-2 d-flex flex-row flex-wrap justify-content-between">
-    <div class="copyright">
-      <small>
-        {{- .Site.Copyright | safeHTML -}}
-      </small>
-    </div>
-    <div>
-      <small>
-        <a href="https://github.com/darshanbaral/khata">khata</a> by
-        <a href="https://www.darshanbaral.com/"> Darshan Baral</a>
-        &middot; powered by
-        <a href="https://gohugo.io/">
-          hugo
-        </a>
-      </small>
-    </div>
+{{ end }}
+<footer
+  class="border-top border-light py-2 d-flex flex-row flex-wrap justify-content-between"
+>
+  <div class="copyright">
+    <small>{{- .Site.Copyright | safeHTML -}}</small>
+  </div>
+  <div>
+    <small>
+      <a href="https://github.com/darshanbaral/khata">khata</a> by
+      <a href="https://www.darshanbaral.com/"> Darshan Baral</a>
+      &middot; powered by
+      <a href="https://gohugo.io/"> hugo </a>
+    </small>
   </div>
 </footer>
