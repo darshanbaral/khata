@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
+:root {
+  --color-darker: #1f1f1f;
+  --color-lighter: #2c2c2c;
+  --color-accent: #8bb9fe;
+  --color-disabled: #5c58589c;
+  --color-placeholder: #8f8f8f;
+  --color-bluish: #122b1f;
+}
+
 body {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
@@ -15,6 +24,12 @@ a {
   text-decoration: none;
 }
 
+mark {
+  background-color: var(--color-accent);
+  color: var(--color-darker);
+  border-radius: 0.25rem;
+}
+
 code,
 pre {
   font-family: "Fira Code", monospace;
@@ -24,24 +39,84 @@ pre {
   font-family: "Inconsolata", monospace;
   font-size: 0.85rem;
   line-height: 1.5;
-  color: #f8f8f2;
-  background-color: #1c1e20 !important;
+  background-color: var(--color-darker) !important;
   padding: 15px 20px;
   border-radius: 8px;
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  border: 1px solid #514848;
+  border: 1px solid var(--color-lighter);
   margin: 1em 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: "Merriweather", serif;
+  line-height: 1.25;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-placeholder);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-lighter);
+}
+
+th,
+td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 1px solid var(--color-lighter);
+  vertical-align: middle;
+}
+
+thead {
+  background-color: var(--color-lighter);
+  font-weight: 600;
+}
+
+caption {
+  caption-side: bottom;
+  text-align: center;
+  font-size: 0.9rem;
+  padding-top: 0.5em;
 }
 
 .profile-info {
@@ -51,7 +126,7 @@ h5 {
 }
 
 .menu-item:hover {
-  background-color: #1c1e20;
+  background-color: var(--color-darker);
 }
 
 .pagination {
@@ -60,20 +135,90 @@ h5 {
 }
 
 .page-item.disabled .page-link {
-  color: #fff !important;
-  background-color: #5c58589c;
-}
-
-#TableOfContents > ul {
-  margin-left: 10px;
-  padding-left: 5px;
+  background-color: var(--color-placeholder);
 }
 
 .TableOfContents {
+  max-width: 50%;
   float: right;
 }
 
+.TableOfContents ul {
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+
+.bg-taxa {
+  background-color: var(--color-bluish);
+}
+
+.metadata-panel {
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-lighter);
+}
+
+.pagefind-ui__search-clear {
+  display: none;
+}
+
+.pagefind-ui__search-input {
+  background-color: var(--color-darker);
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  border: 1px solid gray;
+}
+
+.pagefind-ui__search-input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.footnote-ref::before {
+  content: " [";
+}
+
+.footnote-ref::after {
+  content: "]";
+}
+
+blockquote {
+  font-family: "Merriweather", serif;
+  font-style: italic;
+  background-color: var(--color-lighter);
+  border-left: 4px solid var(--color-accent);
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 6px;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 2rem;
+  line-height: 0;
+  vertical-align: -0.4em;
+  color: var(--color-accent);
+  margin-right: 0.25em;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  margin-top: 0.5em;
+}
+
 @media only screen and (max-width: 750px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .profile-info {
     width: 100%;
     margin: 30px 0;
@@ -83,27 +228,7 @@ h5 {
   }
 
   .TableOfContents {
+    max-width: 100%;
     float: initial;
   }
-}
-
-.bg-taxa {
-  background-color: #122b1f;
-}
-
-.pagefind-ui__search-clear {
-  display: none;
-}
-
-.pagefind-ui__search-input {
-  color: white;
-  background-color: #322d2d;
-  width: 100%;
-  padding: 0.5em;
-  border-radius: 0.25em;
-  border: 1px solid gray;
-}
-
-.pagefind-ui__search-input::placeholder {
-  color: #8f8f8f;
 }
