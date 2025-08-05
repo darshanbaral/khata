@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap");
 
+:root {
+  --color-darker: #1f1f1f;
+  --color-lighter: #2c2c2c;
+  --color-accent: #8bb9fe;
+  --color-disabled: #5c58589c;
+  --color-placeholder: #8f8f8f;
+  --color-bluish: #122b1f;
+}
+
 body {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
@@ -15,6 +24,12 @@ a {
   text-decoration: none;
 }
 
+mark {
+  background-color: var(--color-accent);
+  color: var(--color-darker);
+  border-radius: 0.25rem;
+}
+
 code,
 pre {
   font-family: "Fira Code", monospace;
@@ -24,16 +39,14 @@ pre {
   font-family: "Inconsolata", monospace;
   font-size: 0.85rem;
   line-height: 1.5;
-  color: #f8f8f2;
-  background-color: #1c1e20 !important;
+  background-color: var(--color-darker) !important;
   padding: 15px 20px;
   border-radius: 8px;
   overflow-x: auto;
   white-space: pre-wrap;
   word-break: break-word;
-  border: 1px solid #514848;
+  border: 1px solid var(--color-lighter);
   margin: 1em 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 h1,
@@ -74,7 +87,7 @@ h6 {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #aaa;
+  color: var(--color-placeholder);
 }
 
 table {
@@ -82,50 +95,28 @@ table {
   border-collapse: collapse;
   margin: 1.5em 0;
   font-size: 0.95rem;
-  color: #e0e0e0;
-  background-color: #1f1f1f;
-  border: 1px solid #333;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-lighter);
 }
 
 th,
 td {
   padding: 0.75em 1em;
   text-align: left;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--color-lighter);
   vertical-align: middle;
 }
 
 thead {
-  background-color: #2c2c2c;
-  color: #ffffff;
+  background-color: var(--color-lighter);
   font-weight: 600;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #262626;
-}
-
-tbody tr:hover {
-  background-color: #333333;
-  transition: background-color 0.2s ease;
 }
 
 caption {
   caption-side: bottom;
   text-align: center;
   font-size: 0.9rem;
-  color: #aaa;
   padding-top: 0.5em;
-}
-
-@media only screen and (max-width: 750px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
 .profile-info {
@@ -135,7 +126,7 @@ caption {
 }
 
 .menu-item:hover {
-  background-color: #1c1e20;
+  background-color: var(--color-darker);
 }
 
 .pagination {
@@ -144,13 +135,7 @@ caption {
 }
 
 .page-item.disabled .page-link {
-  color: #fff !important;
-  background-color: #5c58589c;
-}
-
-.TableOfContents ul {
-  margin-left: 0.5rem;
-  padding-left: 1rem;
+  background-color: var(--color-placeholder);
 }
 
 .TableOfContents {
@@ -158,23 +143,18 @@ caption {
   float: right;
 }
 
-@media only screen and (max-width: 750px) {
-  .profile-info {
-    width: 100%;
-    margin: 30px 0;
-    flex-wrap: wrap;
-    max-width: none;
-    min-width: 0;
-  }
-
-  .TableOfContents {
-    max-width: 100%;
-    float: initial;
-  }
+.TableOfContents ul {
+  margin-left: 0.5rem;
+  padding-left: 1rem;
 }
 
 .bg-taxa {
-  background-color: #122b1f;
+  background-color: var(--color-bluish);
+}
+
+.metadata-panel {
+  background-color: var(--color-darker);
+  border: 1px solid var(--color-lighter);
 }
 
 .pagefind-ui__search-clear {
@@ -182,8 +162,7 @@ caption {
 }
 
 .pagefind-ui__search-input {
-  color: white;
-  background-color: #322d2d;
+  background-color: var(--color-darker);
   width: 100%;
   padding: 0.5em;
   border-radius: 0.25em;
@@ -191,7 +170,7 @@ caption {
 }
 
 .pagefind-ui__search-input::placeholder {
-  color: #8f8f8f;
+  color: var(--color-placeholder);
 }
 
 .footnote-ref::before {
@@ -205,13 +184,11 @@ caption {
 blockquote {
   font-family: "Merriweather", serif;
   font-style: italic;
-  color: #ccc;
-  background-color: #1f1f1f;
-  border-left: 4px solid #4caf50;
+  background-color: var(--color-lighter);
+  border-left: 4px solid var(--color-accent);
   padding: 1em 1.5em;
   margin: 1.5em 0;
   border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 blockquote p {
@@ -223,7 +200,7 @@ blockquote::before {
   font-size: 2rem;
   line-height: 0;
   vertical-align: -0.4em;
-  color: #4caf50;
+  color: var(--color-accent);
   margin-right: 0.25em;
 }
 
@@ -231,6 +208,27 @@ blockquote cite {
   display: block;
   text-align: right;
   font-size: 0.85rem;
-  color: #888;
   margin-top: 0.5em;
+}
+
+@media only screen and (max-width: 750px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-info {
+    width: 100%;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .TableOfContents {
+    max-width: 100%;
+    float: initial;
+  }
 }

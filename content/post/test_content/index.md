@@ -1,6 +1,6 @@
 ---
 title: "Demo Content"
-author: "Darshan Baral"
+author: "Various Authors"
 date: 2025-08-04
 tags: ["html", "markdown"]
 categories: ["theme"]

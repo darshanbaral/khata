@@ -3,8 +3,9 @@
 <article>
 
   <h1 class="my-4">{{- .Title -}}</h1>
-  <div class="metadata p-2 mb-3 secondary-bg-color rounded">
-    {{ partial "metadata/metadata-date" . }}
+  <div class="metadata-panel p-2 mb-3 rounded border">
+    {{ partial "metadata/metadata-author" . }}
+    {{ partial "metadata/metadata-date" . }}    
     {{ partial "metadata/metadata-readingtime" . }}
     {{ if ne $.Kind "section" }}
     {{ partial "metadata/metadata-section" . }}
