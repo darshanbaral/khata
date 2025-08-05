@@ -1,7 +1,6 @@
 {{ define "main" }}
-<h1 class="my-4">{{ .Title }}</h1>
 <script src="{{ `pagefind/pagefind-ui.js` | relURL }}"></script>
-<div id="search"></div>
+<div class="my-4" id="search"></div>
 <script>
   window.addEventListener("DOMContentLoaded", (event) => {
     new PagefindUI({ element: "#search", showSubResults: true });

@@ -1,7 +1,9 @@
 {{ define "main" }}
+{{ .Scratch.Set "figure_count" 1 }}
 <article>
-  <h1 class="my-4 top-h1">{{- .Title -}}</h1>
-  <div class="ms-3 metadata">
+
+  <h1 class="my-4">{{- .Title -}}</h1>
+  <div class="metadata p-2 mb-3 secondary-bg-color rounded">
     {{ partial "metadata/metadata-date" . }}
     {{ partial "metadata/metadata-readingtime" . }}
     {{ if ne $.Kind "section" }}
@@ -10,8 +12,8 @@
     {{ partial "metadata/metadata-taxonomy" . }}
     {{ partial "metadata/metadata-description" . }}
   </div>
-
-  <hr />
+  
+  
 
   {{ $toc := .TableOfContents }}
   {{ $items := findRE `</li>` $toc }}

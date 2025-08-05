@@ -4,7 +4,7 @@
 </h1>
 <div>
   {{ range (.Paginator 5).Pages }}
-  <div class="p-3 border rounded my-2">
+  <div class="p-3 border rounded mt-2 mb-4">
     <a href="{{ .Permalink | relURL }}">
       <h4>{{- .Title -}}</h4>
     </a>
