@@ -7,7 +7,7 @@ demosite = "https://darshanbaral.github.io/khata/"
 tags = ["documentation", "simple"]
 features = ["documentation", "bootstrap", "responsive"]
 min_version = "0.147.9"
-theme_version = "2.0.0"
+theme_version = "3.0.0"
 
 [author]
   name = "Darshan Baral"
