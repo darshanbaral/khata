@@ -49,20 +49,22 @@
       <main class="flex-grow-1 d-flex flex-column">
         
 <div class="flex-grow-1 d-flex justify-content-center align-items-center">
-  <div class="profile-info d-flex flex-row">
-    <div class="profile-photo" style="display: flex; align-items: flex-end">
+  <div class="profile-info d-flex flex-column flex-md-row" style="max-width: 600px;">
+    <div class="profile-photo d-flex align-items-end">
       <img
+        class="rounded me-4"
         src="/khata/homePageImage.jpg"
-        style="width: 200px; margin-right: 20px; border-radius: 10%"
+        style="width: 200px"
       />
     </div>
 
     <div class="d-flex flex-column">
-      <div>
-        <h1><code>khata</code></h1>
-        <h2><a href="https://gohugo.io/">hugo</a> theme</h2>
-        <h3>for documentation/note-taking</h3>
-        <div class="d-flex flex-row flex-wrap social" style="margin-bottom: 40px;">
+      <div class="mb-4">
+        <h1 class="my-1"><code>khata</code></h1>
+        <h2 class="my-1"><a href="https://gohugo.io/">hugo</a> theme</h2>
+        <h3 class="my-1">for documentation/note-taking</h3>
+        <div class="d-flex flex-row flex-wrap social my-4">
+          
   
   <div class="ms-2 me-2">
     <a href="#" title="Twitter"
@@ -82,11 +84,12 @@
     ></a>
   </div>
   
-</div>
 
+
+        </div>
       </div>
       <div><a href="https://github.com/darshanbaral/khata"><code>khata</code></a> theme is a clean and responsive Hugo theme designed for documentation and note-taking. Khata is highly customizable and provides a simple, elegant layout to make your content easy to read and navigate.</div>
-      <div class="mt-4 d-flex flex-column flex-sm-row flex-wrap">
+      <div class="mt-4 d-flex flex-column flex-md-row flex-wrap">
         <span class="menu-item my-0 me-3">
           <a href="/khata/recent">Recent Posts</a>
         </span>
