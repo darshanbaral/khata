@@ -1,21 +1,24 @@
 <div class="flex-grow-1 d-flex justify-content-center align-items-center">
-  <div class="profile-info d-flex flex-row">
-    <div class="profile-photo" style="display: flex; align-items: flex-end">
+  <div class="profile-info d-flex flex-column flex-md-row" style="max-width: 600px;">
+    <div class="profile-photo d-flex align-items-end">
       <img
+        class="rounded me-4"
         src="{{ .Site.Params.author.profilephoto | relURL }}"
-        style="width: 200px; margin-right: 20px; border-radius: 10%"
+        style="width: 200px"
       />
     </div>
 
     <div class="d-flex flex-column">
-      <div>
-        <h1>{{- .Site.Params.author.name | markdownify -}}</h1>
-        <h2>{{- .Site.Params.author.title | markdownify -}}</h2>
-        <h3>{{- .Site.Params.author.subtitle | markdownify -}}</h3>
-        {{ partial "social" . }}
+      <div class="mb-4">
+        <h1 class="my-1">{{- .Site.Params.author.name | markdownify -}}</h1>
+        <h2 class="my-1">{{- .Site.Params.author.title | markdownify -}}</h2>
+        <h3 class="my-1">{{- .Site.Params.author.subtitle | markdownify -}}</h3>
+        <div class="d-flex flex-row flex-wrap social my-4">
+          {{ partial "social" . }}
+        </div>
       </div>
       <div>{{ .Site.Params.author.about | markdownify }}</div>
-      <div class="mt-4 d-flex flex-column flex-sm-row flex-wrap">
+      <div class="mt-4 d-flex flex-column flex-md-row flex-wrap">
         <span class="menu-item my-0 me-3">
           <a href="{{ `recent` | relURL }}">Recent Posts</a>
         </span>
